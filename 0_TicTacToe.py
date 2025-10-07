@@ -33,6 +33,32 @@ def update_board(pos, symbol):
 def check_winner():
     # Write logic to decide if game is finished
     # and print the result ("X", "O", "draw")
+
+    #row wins
+    if game_state[0] == game_state[1] == game_state[2] != "_":
+        return game_state[0];
+    elif game_state[3] == game_state[4] == game_state[5]!= "_":
+        return game_state[0];
+    elif game_state[6] == game_state[7] == game_state[8]!= "_":
+        return game_state[0];
+
+    #colum win
+    elif game_state[0] == game_state[3] == game_state[6]!= "_":
+        return game_state[0];
+    elif game_state[1] == game_state[4] == game_state[7]!= "_":
+        return game_state[0];
+    elif game_state[2] == game_state[5] == game_state[8]!= "_":
+        return game_state[0];
+
+    #diagonal wins
+
+    elif game_state[0] == game_state[4] == game_state[8]!= "_":
+        return game_state[0];
+    elif game_state[6] == game_state[4] == game_state[2]!= "_":
+        return game_state[0];
+
+    if available_actions() == []:
+        return "draw"
     return None
 
 # ---------- Monte Carlo Training ----------
